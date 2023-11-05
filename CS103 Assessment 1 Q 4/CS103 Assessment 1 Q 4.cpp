@@ -3,6 +3,9 @@
 // This program allows the user to play hangman as outlined in the brief
 
 #include <iostream>
+#include <vector>
+using namespace std;
+
 
 int main()
 {
