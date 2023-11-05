@@ -57,10 +57,24 @@ void drawHangman(int incorrectGuesses) {
 }
 
 // Function to draw a Walkman
+void drawWalkman() {
+	cout << "  ( )   ( ) " << endl;
+	cout << "   |     |  " << endl;
+	cout << "   |     |  " << endl;
+	cout << "  /       \\ " << endl;
+}
 
 
 //Function to invert the Hangman
-
+void invertHangman() {
+	cout << "  ________" << endl;
+	cout << "  |     |" << endl;
+	cout << "  |     O" << endl;
+	cout << "  |    /|\\ " << endl;
+	cout << "  |    / \\ " << endl;
+	cout << "  |" << endl;
+	cout << "---------" << endl;
+}
 
 // Function to play Hangman
 
