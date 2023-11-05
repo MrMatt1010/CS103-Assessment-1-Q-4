@@ -18,7 +18,43 @@ void drawLine(int length) {
 }
 
 //Function to draw the Hangman
+void drawHangman(int incorrectGuesses) {
+	cout << "______________";
+	cout << "|           |";
 
+	if (incorrectGuesses >= 1) {
+		cout << "   |   0";
+	}
+
+	if (incorrectGuesses >= 2) {
+		cout << "   |   /";
+	}
+
+	if (incorrectGuesses == 3) {
+		cout << "  |   /";
+	}
+	else if (incorrectGuesses >= 2) {
+		cout << "  |";
+	}
+
+	cout << endl;
+
+	if (incorrectGuesses >= 2) {
+		cout << "  |";
+	}
+
+	if (incorrectGuesses >= 4) {
+		cout << " \\";
+	}
+
+	if (incorrectGuesses >= 3) {
+		cout << "   /";
+	}
+
+	cout << endl;
+	cout << "  |" << endl;
+	cout << "---------" << endl;
+}
 
 // Function to draw a Walkman
 
@@ -27,6 +63,8 @@ void drawLine(int length) {
 
 
 // Function to play Hangman
+
+
 
 int main()
 {
