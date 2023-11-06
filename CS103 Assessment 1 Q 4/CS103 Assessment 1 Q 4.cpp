@@ -118,7 +118,7 @@ bool playHangman(string word) {
 int main() {
 	srand(time(0));
 
-	string words[] = { "hangman", "walkman", "computer", "programming", "keyboard" };
+	string words[] = { "yoobee", "home", "computer", "programming", "developer" };
 	int wordIndex = rand() % 5;
 	string wordToGuess = words[wordIndex];
 
