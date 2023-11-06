@@ -80,47 +80,42 @@ void invertHangman() {
 bool playHangman(string word) {
 	int incorrectGuesses = 0;
 	string guessedWord(word.length(), '_');
-}
 
-while (incorrectGuesses < 3) {
-	cout << "Word: " << guessedWord << endl;
-	char guess;
-	cout << "Guess a letter (lowercase only): ";
-	cin >> guess;
+	while (incorrectGuesses < 3) {
+		cout << "Word: " << guessedWord << endl;
+		char guess;
+		cout << "Guess a letter (lowercase only): ";
+		cin >> guess;
 
-	// Convert the guess to lowercase
-	guess = tolower(guess);
+		// Convert the guess to lowercase
+		guess = tolower(guess);
 
-	bool found = false;
-	for (int i = 0; i < word.length(); i++) {
-		if (word[i] == guess) {
-			guessedWord[i] = guess;
-			found = true;
+		bool found = false;
+		for (int i = 0; i < word.length(); i++) {
+			if (word[i] == guess) {
+				guessedWord[i] = guess;
+				found = true;
+			}
 		}
+
+		if (!found) {
+			incorrectGuesses++;
+		}
+
+		if (word == guessedWord) {
+			cout << "You win! The word is: " << word << endl;
+			return true;
+		}
+
+		drawHangman(incorrectGuesses);
 	}
 
-	if (!found) {
-		incorrectGuesses++;
-	}
-
-	if (word == guessedWord) {
-		cout << "You win! The word is: " << word << endl;
-		return true;
-	}
-
-	drawLine(20);
-	drawHangman(incorrectGuesses);
-	drawWalkman();
-	drawLine(20);
+	cout << "You lose! The word was: " << word << endl;
+	invertHangman();
+	return false;
 }
 
-cout << "You lose! The word was: " << word << endl;
-invertHangman();
-return false;
-}
-
-int main()
-{
+int main() {
 	srand(time(0));
 
 	string words[] = { "hangman", "walkman", "computer", "programming", "keyboard" };
@@ -138,7 +133,6 @@ int main()
 	else {
 		cout << "Better luck next time." << endl;
 	}
-
 
 	return 0;
 }
